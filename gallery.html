@@ -232,6 +232,14 @@
   </div>
 </footer>
 <script>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.style.display =
+      navLinks.style.display === 'flex' ? 'none' : 'flex';
+  });
+  
 const checkboxes = document.querySelectorAll('.filter-sidebar input');
 const cards = document.querySelectorAll('.card');
 
