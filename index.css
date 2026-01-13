@@ -355,71 +355,57 @@ div.gallery-item div.desc {
 }
   
 /* MOBILE NAVBAR */
+/* =========================
+   MOBILE STYLES
+========================= */
 @media (max-width: 768px) {
-  .search-bar input[type="text"] {
-    width: 100%;
-    max-width: 100%;
-  }
-}
 
-  .view-cart-nav {
-    display: block;
-    padding: 12px 16px;
-    font-size: 16px;
-    text-align: left;
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
   }
 
-
+  /* NAVBAR */
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+    flex-wrap: wrap;
+    padding: 10px;
   }
 
-  .nav-links {
-    display: none;           /* hide links by default */
-    flex-direction: column;  /* vertical menu when shown */
+  .navbar ul {
+    flex-wrap: wrap;
     width: 100%;
-    background-color: #790d1d;
-    position: absolute;
-    top: 60px;               /* below the navbar */
-    left: 0;
-    padding: 10px 0;
   }
 
-  .nav-links li {
-    margin: 10px 0;
-    text-align: center;
+  .logo {
+    margin-right: 0;
   }
 
-  .nav-links li a {
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
+  /* Search bar goes full width */
+  .search-item {
+    width: 100%;
+    margin-top: 10px;
   }
 
-  .hamburger {
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    display: block;
-  }
-}
   .search-bar {
     width: 100%;
   }
-  
-  .products-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    width: 95%;
+
+  .search-bar input {
+    width: 100%;
+    min-width: 0;
   }
 
-  .product-item img {
-    height: auto; /* images scale naturally */
+  /* View Cart stacks nicely */
+  .view-cart-nav {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+  }
+
+  /* Products stack */
+  .products-grid {
+    grid-template-columns: 1fr;
+    width: 95%;
   }
 
   /* Testimonials stack */
@@ -428,7 +414,7 @@ div.gallery-item div.desc {
     width: 95%;
   }
 
-  /* Footer adjusts */
+  /* Footer stacks */
   .footer-links {
     flex-direction: column;
     gap: 10px;
