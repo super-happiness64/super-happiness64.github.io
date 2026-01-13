@@ -7,38 +7,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  
-<div class="container">
-<nav class="navbar">
-  <div class="logo">
-    <a href="index.html">
-      <img src="bloomvalley2.png" alt="Bloom Valley Nursery">
-    </a>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation">
+  <div class="container">
+
+    <!-- Logo -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="bloomvalley2.png" alt="Bloom Valley Nursery">
+      </a>
+    </div>
+
+    <!-- Hamburger -->
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      ☰
+    </button>
+
+    <!-- Nav Links -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="custom.html">Contact</a></li>
+
+      <li class="search-item">
+        <form class="search-bar" action="/search">
+          <input type="text" placeholder="Search...">
+          <button type="submit">
+            <img src="searchbar.png" alt="Search">
+          </button>
+        </form>
+      </li>
+
+      <li>
+        <a href="#cart" class="view-cart-nav">View Cart</a>
+      </li>
+    </ul>
+
   </div>
-
-  <!-- Hamburger button -->
-  <button class="hamburger" aria-label="Menu">
-    ☰
-  </button>
-
-  <!-- Links -->
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="custom.html">Contact</a></li>
-    <li class="search-item">
-      <form class="search-bar" action="/search">
-        <input type="text" placeholder="Search...">
-        <button type="submit">
-          <img src="searchbar.png" alt="Search">
-        </button>
-      </form>
-    </li>
-    <li><a href="#cart" class="view-cart-nav">View Cart</a></li>
-  </ul>
 </nav>
-</div>
 <br>
 
 <div class="banner">
@@ -192,19 +200,16 @@
   </div>
 </footer>
 
+<!-- HAMBURGER SCRIPT -->
 <script>
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
 hamburger.addEventListener('click', () => {
-  if (navLinks.style.display === 'flex') {
-    navLinks.style.display = 'none';
-  } else {
-    navLinks.style.display = 'flex';
-  }
+  navLinks.style.display =
+    navLinks.style.display === 'flex' ? 'none' : 'flex';
 });
 </script>
-
 
 </body>
 </html>
