@@ -1,12 +1,16 @@
-.container {
-  width: 90%;
-  margin: auto;
-}
-
 body {
   margin: 0;
   font-family: sans-serif;
   background-color: floralwhite;
+  overflow-x: hidden; /* prevents horizontal scroll */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* adjusts for desktop */
+  margin: 0 auto;
+  padding: 0 15px; /* small padding so content doesn't touch edges */
+  box-sizing: border-box;
 }
 
 .logo img {
