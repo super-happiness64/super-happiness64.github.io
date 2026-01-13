@@ -222,7 +222,6 @@ body {
 /* Sidebar Cart Buttons */
 .cart-controls {
   margin-top: 40px; /* Space away from the filters */
-  border-top: 1px solid #eee;
   padding-top: 20px;
 }
 
