@@ -9,43 +9,30 @@
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar" role="navigation">
-  <div class="container">
-
-    <!-- Logo -->
-    <div class="logo">
-      <a href="index.html">
+<nav class="navbar">
+<ul>
+  <li class="logo">
+      <a href="#home">
         <img src="bloomvalley2.png" alt="Bloom Valley Nursery">
       </a>
-    </div>
+  </li>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="gallery.html">Gallery</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="more.html">More</a></li>
 
-    <!-- Hamburger -->
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      ☰
-    </button>
-
-    <!-- Nav Links -->
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="custom.html">Contact</a></li>
-
-      <li class="search-item">
-        <form class="search-bar" action="/search">
-          <input type="text" placeholder="Search...">
-          <button type="submit">
-            <img src="searchbar.png" alt="Search">
-          </button>
-        </form>
-      </li>
-
-      <li>
-        <a href="#cart" class="view-cart-nav">View Cart</a>
-      </li>
-    </ul>
-
-  </div>
+  <li class="search-item">
+    <form class="search-bar" action="/search">
+      <input type="text" placeholder="Search...">
+      <button type="submit">
+        <img src="searchbar.png" alt="Search">
+      </button>
+    </form>
+  </li>
+  <li class="nav-right">
+    <a href="#cart" class="view-cart-nav">View Cart</a>
+  </li>
+</ul>
 </nav>
 <br>
 
@@ -192,37 +179,13 @@
     <br>
     
     <ul class="footer-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="more.html">More</a></li>
     </ul>
   </div>
 </footer>
-
-<!-- SCRIPT -->
-<script>
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
-
-hamburger.addEventListener('click', () => {
-  navLinks.style.display =
-    navLinks.style.display === 'flex' ? 'none' : 'flex';
-});
   
-  
-document.addEventListener('DOMContentLoaded', () => {
-  const newsletterForm = document.querySelector('.newsletter-form');
-
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
-      e.preventDefault(); // stop actual form submission
-      alert('Thank you for subscribing.');
-      newsletterForm.reset(); // clears the input
-    });
-  }
-});
-</script>
-
 </body>
 </html>
