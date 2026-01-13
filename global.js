@@ -81,7 +81,19 @@ const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        alert("Thank you for your message");
+
+        // Collect form data
+        const customerData = {
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            option: document.getElementById('custom-option').value,
+            message: document.getElementById('comment').value
+        };
+
+        // Save to localStorage (Permanent)
+        localStorage.setItem('customerProfile', JSON.stringify(customerData));
+
+        alert("Thank you for your message. Your info has been saved!");
         this.reset();
     });
 }
