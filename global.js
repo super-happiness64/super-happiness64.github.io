@@ -26,55 +26,110 @@ document.querySelectorAll('.newsletter-form').forEach(form => {
 
 let cartItems = 0; // Tracks if the cart is empty or not
 
-// Add to Cart
-// Add to Cart with Session Storage
-document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', function() {
-        const card = this.closest('.card');
-        const plantName = card.querySelector('h3').innerText;
-        const plantPrice = card.querySelector('.price').innerText;
+document.addEventListener('DOMContentLoaded', function() {
 
-        // Get current cart from storage or start empty array
-        let cart = JSON.parse(sessionStorage.getItem('nurseryCart')) || [];
+    // --- 1. MODAL ELEMENTS ---
+    const modal = document.getElementById("cartModal");
+    const viewCartBtn = document.querySelector(".view-cart-nav");
+    const closeBtn = document.querySelector(".close-modal");
+
+    // --- 2. MODAL OPEN/CLOSE LOGIC ---
+    if (viewCartBtn) {
+        viewCartBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            displayCartItems(); // Function to load items from sessionStorage
+            modal.style.display = "block";
+        });
+    }
+
+    if (closeBtn) {
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+
+    // Close if user clicks the dark background
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // --- 3. SESSION STORAGE: DISPLAY ITEMS ---
+    function displayCartItems() {
+        const list = document.getElementById('cartItemsList');
+        // Read data from sessionStorage
+        const cart = JSON.parse(sessionStorage.getItem('nurseryCart')) || [];
         
-        // Add new item
-        cart.push({ name: plantName, price: plantPrice });
-        
-        // Save back to sessionStorage
-        sessionStorage.setItem('nurseryCart', JSON.stringify(cart));
-        
-        alert("Item added to the cart");
+        if (cart.length === 0) {
+            list.innerHTML = "<p>Your cart is empty.</p>";
+        } else {
+            list.innerHTML = cart.map(item => `
+                <div style="display:flex; justify-content:space-between; margin-bottom:10px; border-bottom:1px dashed #ccc; padding-bottom:5px;">
+                    <span>${item.name}</span>
+                    <strong>${item.price}</strong>
+                </div>
+            `).join('');
+        }
+    }
+
+    // --- 4. SESSION STORAGE: ADD TO CART ---
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+            const card = this.closest('.card');
+            const plantName = card.querySelector('h3').innerText;
+            const plantPrice = card.querySelector('.price').innerText;
+
+            let cart = JSON.parse(sessionStorage.getItem('nurseryCart')) || [];
+            cart.push({ name: plantName, price: plantPrice });
+            
+            sessionStorage.setItem('nurseryCart', JSON.stringify(cart));
+            alert("Item added to the cart");
+        });
     });
+
+    // --- 5. CLEAR & PROCESS (Wipe SessionStorage) ---
+    // Note: Since these buttons are now in the modal, 
+    // we use a generic listener for all buttons with these classes
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('clear-cart-btn')) {
+            if (sessionStorage.getItem('nurseryCart')) {
+                sessionStorage.removeItem('nurseryCart');
+                displayCartItems(); // Update the modal view
+                alert("Cart cleared");
+            } else {
+                alert("No items to clear.");
+            }
+        }
+
+        if (e.target.classList.contains('process-order-btn')) {
+            if (sessionStorage.getItem('nurseryCart')) {
+                sessionStorage.removeItem('nurseryCart');
+                displayCartItems(); // Update the modal view
+                alert("Thank you for your order");
+                modal.style.display = "none"; // Close modal after order
+            } else {
+                alert("Cart is empty.");
+            }
+        }
+    });
+
+    // --- 6. LOCAL STORAGE: CONTACT FORM ---
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const customerData = {
+                email: document.getElementById('email').value,
+                message: document.getElementById('comment').value
+            };
+            // Save permanently
+            localStorage.setItem('customerProfile', JSON.stringify(customerData));
+            alert("Thank you for your message");
+            this.reset();
+        });
+    }
 });
-
-// Function to wipe cart
-function wipeCart() {
-    sessionStorage.removeItem('nurseryCart');
-}
-
-// Clear Cart Button
-if (clearBtn) {
-    clearBtn.addEventListener('click', function() {
-        if (sessionStorage.getItem('nurseryCart')) {
-            wipeCart();
-            alert("Cart cleared");
-        } else {
-            alert("No items to clear.");
-        }
-    });
-}
-
-// Process Order Button
-if (processBtn) {
-    processBtn.addEventListener('click', function() {
-        if (sessionStorage.getItem('nurseryCart')) {
-            wipeCart();
-            alert("Thank you for your order");
-        } else {
-            alert("Cart is empty.");
-        }
-    });
-}
 
 // Contact Form Alert
 const contactForm = document.querySelector('.contact-form');
