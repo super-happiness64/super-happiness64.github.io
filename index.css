@@ -362,6 +362,14 @@ div.gallery-item div.desc {
   }
 }
 
+  .view-cart-nav {
+    display: block;
+    padding: 12px 16px;
+    font-size: 16px;
+    text-align: left;
+  }
+
+
   .navbar {
     display: flex;
     justify-content: space-between;
