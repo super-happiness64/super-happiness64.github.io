@@ -27,9 +27,22 @@ document.querySelectorAll('.newsletter-form').forEach(form => {
 let cartItems = 0; // Tracks if the cart is empty or not
 
 // Add to Cart
+// Add to Cart with Session Storage
 document.querySelectorAll('.add-to-cart').forEach(button => {
     button.addEventListener('click', function() {
-        cartItems++;
+        const card = this.closest('.card');
+        const plantName = card.querySelector('h3').innerText;
+        const plantPrice = card.querySelector('.price').innerText;
+
+        // Get current cart from storage or start empty array
+        let cart = JSON.parse(sessionStorage.getItem('nurseryCart')) || [];
+        
+        // Add new item
+        cart.push({ name: plantName, price: plantPrice });
+        
+        // Save back to sessionStorage
+        sessionStorage.setItem('nurseryCart', JSON.stringify(cart));
+        
         alert("Item added to the cart");
     });
 });
