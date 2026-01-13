@@ -66,3 +66,15 @@ document.getElementById("next").onclick = () => {
 };
 
 renderCalendar();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.querySelector('.contact-form'); // add class="contact-form" to your form
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your message');
+      contactForm.reset();
+    });
+  }
+});
