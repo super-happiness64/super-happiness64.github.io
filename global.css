@@ -287,12 +287,11 @@ body {
   gap: 2rem;
   flex-wrap: wrap;
 
-  max-width: 1100px;   /* controls the group width */
+  max-width: 2000px;   /* controls the group width */
   margin: 0 auto;      /* centers the whole group */
 }
-
 .card {
-  width: 300px;              /* keeps cards from stretching */
+  width: 400px;
 }
 
 
