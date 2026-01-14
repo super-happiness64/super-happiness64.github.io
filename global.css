@@ -281,6 +281,18 @@ body {
 }
 
 /* 4. PRODUCT GRID & CARDS (HUGGING BORDERS) */
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+}
+
+
 .achievements {
   display: flex;
   justify-content: center;
