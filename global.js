@@ -180,3 +180,4 @@ document.getElementById("next").onclick = () => {
 };
 
 renderCalendar();
+}
