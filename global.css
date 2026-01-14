@@ -7,7 +7,6 @@
   --bg-floral: floralwhite;
   --text-dark: #00231c;
   --border-brown: #79512e;
-  --olive: #4b4a1e;
 }
 
 * {
@@ -20,6 +19,7 @@ body {
   font-family: sans-serif;
   background-color: var(--bg-floral);
   line-height: 1.6;
+  color: #00231c;
 }
 
 /* 2. SHARED LAYOUT COMPONENTS (Navbar, Footer, Banner) */
