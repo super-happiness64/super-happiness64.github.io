@@ -528,11 +528,62 @@ button:hover {
   border-top-color: #9d352e;
 }
 
-/* 7. RESPONSIVE QUERIES */ @media (max-width: 768px) {
+@media (min-width: 769px) {
+  .filter-sidebar {
+    position: sticky;
+    top: 20px;
+  }
+}
+
+/* 7. RESPONSIVE QUERIES */ 
+@media (max-width: 768px) {
   .about-section, .shop-layout, .event-card { flex-direction: column;
   display: block; } 
   .calendar-grid { 
     min-width: auto; overflow-x: scroll; } 
   .newsletter-form input[type="email"] {
     width: 100%; } 
+
+    .logo {
+    margin-bottom: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center; /* ← centers all items horizontally */
+    text-align: center;
+  }
+  
+  .navbar li {
+    margin: 5px 0;
+  }
+  
+  .search-item, .nav-right {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .search-bar input[type="text"] {
+    width: 70%;
+  }
+  
+    .banner {
+    min-height: 120px; 
+    height: auto;  
+    padding: 20px;      
+    font-size: 1.5rem;  
+    text-align: center;
+    flex-direction: column; 
+  }
+
+    .shop-layout {
+    display: block; /* stack sidebar & products vertically */
+  }
+
+  .filter-sidebar {
+    position: relative; /* stop sticky */
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
 }
