@@ -591,6 +591,16 @@ button:hover {
     flex-direction: column; /* stack text if needed */
   }
 
+    .shop-layout {
+    display: block; /* stack sidebar & products vertically */
+  }
+
+  .filter-sidebar {
+    position: relative; /* stop sticky */
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
 
   /* 7. Footer stack */
   .footer-links {
