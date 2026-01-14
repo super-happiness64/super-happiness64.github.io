@@ -454,12 +454,12 @@ body {
 button {
   padding: 6px 10px;
   border: 1px solid #79512e;
-  background: #e0d2bd;
+  background: #9d352e;
   cursor: pointer;
 }
 
 button:hover {
-  background: #4B4A1E;
+  background: #790d1d;
 }
 
 /* Grid */
