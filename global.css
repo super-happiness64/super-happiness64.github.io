@@ -527,3 +527,12 @@ button:hover {
   border: 8px solid transparent;
   border-top-color: #9d352e;
 }
+
+/* 7. RESPONSIVE QUERIES */ @media (max-width: 768px) {
+  .about-section, .shop-layout, .event-card { flex-direction: column;
+  display: block; } 
+  .calendar-grid { 
+    min-width: auto; overflow-x: scroll; } 
+  .newsletter-form input[type="email"] {
+    width: 100%; } 
+}
