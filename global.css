@@ -583,10 +583,14 @@ button:hover {
 
   /* 6. Banner adjustments */
   .banner {
-    min-height: 60px;
-    padding: 0 10px;
-    font-size: 1.2rem;
+    min-height: 120px;  /* taller banner */
+    height: auto;       /* let it grow if text wraps */
+    padding: 20px;      /* extra space inside */
+    font-size: 1.5rem;  /* optional: make the text bigger */
+    text-align: center;
+    flex-direction: column; /* stack text if needed */
   }
+
 
   /* 7. Footer stack */
   .footer-links {
