@@ -283,9 +283,12 @@ body {
 /* 4. PRODUCT GRID & CARDS (HUGGING BORDERS) */
 .products {
   display: flex;
-  justify-content: center;   /* centers the row */
-  gap: 2rem;                 /* space between cards */
-  flex-wrap: wrap;           /* responsive on smaller screens */
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  max-width: 1100px;   /* controls the group width */
+  margin: 0 auto;      /* centers the whole group */
 }
 
 .card {
