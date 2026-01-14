@@ -281,18 +281,20 @@ body {
 }
 
 /* 4. PRODUCT GRID & CARDS (HUGGING BORDERS) */
-.products {
+.achievements {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.25rem;        /* tighter gaps for this page */
   flex-wrap: wrap;
 
-  max-width: 2000px;   /* controls the group width */
-  margin: 0 auto;      /* centers the whole group */
+  max-width: 2000px;   /* tighter container for this page */
+  margin: 0 auto;
 }
-.card {
-  width: 400px;
+
+.achievements .card {
+  width: 360px;        /* slightly bigger than shop cards */
 }
+
 
 
 .card-image img {
