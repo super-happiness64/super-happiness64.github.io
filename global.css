@@ -282,19 +282,16 @@ body {
 
 /* 4. PRODUCT GRID & CARDS (HUGGING BORDERS) */
 .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
+  display: flex;
+  justify-content: center;   /* centers the row */
+  gap: 2rem;                 /* space between cards */
+  flex-wrap: wrap;           /* responsive on smaller screens */
 }
 
 .card {
-  background: #ffffff;
-  border: 1px solid var(--border-brown);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
-  overflow: hidden; /* Ensures image doesn't overlap rounded corners */
+  width: 300px;              /* keeps cards from stretching */
 }
+
 
 .card-image img {
   width: 100%;
@@ -389,15 +386,16 @@ body {
 /* 6. EVENTS & CALENDAR (Custom/Events Page) */
 
 .custom-page-grid {
-  display: flex;          /* Enables Flexbox */
-  justify-content: center; /* Centers the cards horizontally */
-  align-items: flex-start; /* Aligns cards to the top */
-  flex-wrap: wrap;        /* Allows cards to move to the next line on mobile */
-  gap: 20px;              /* Adds consistent space between the cards */
-  max-width: 1200px;      /* Prevents the row from getting too wide */
-  margin: 0 auto;         /* Centers the entire container on the page */
-  padding: 20px;
+  display: grid;
+  /* Specifically ask for 3 columns */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+  /* This centers the whole block on the page */
+  margin: 0 auto; 
 }
+
 
 /* Ensure the cards don't have a fixed width that breaks the row */
 .custom-page-grid .card {
