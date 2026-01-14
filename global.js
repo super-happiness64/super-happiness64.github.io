@@ -20,12 +20,12 @@ function renderCartItems() {
     if (cart.length === 0) {
         listContainer.innerHTML = "<p>Your cart is empty.</p>";
     } else {
-        listContainer.innerHTML = cart.map(item => `
-            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding:5px;">
-                <span>${item.name}</span>
-                <span>${item.price}</span>
-            </div>
-        `).join('');
+        listContainer.innerHTML = cart.map(item =>
+            '<div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding:5px;">' +
+                '<span>' + item.name + '</span>' +
+                '<span>' + item.price + '</span>' +
+            '</div>'
+        ).join('');
     }
 }
 
@@ -132,9 +132,9 @@ const monthNames = [
 
 function renderCalendar() {
   calendar.innerHTML = "";
-  title.textContent = `${monthNames[month]} ${year}`;
+  title.textContent = monthNames[month] + " " + year;
 
-  ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].forEach(d => {
+  ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].forEach(function(d) {
     const el = document.createElement("div");
     el.className = "day-name";
     el.textContent = d;
@@ -153,7 +153,10 @@ function renderCalendar() {
     el.className = "day";
     el.textContent = day;
 
-    const key = `${year}-${String(month+1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
+    const key =
+      year + "-" +
+      String(month + 1).padStart(2, "0") + "-" +
+      String(day).padStart(2, "0");
 
     if (events[key]) {
       el.classList.add("event");
