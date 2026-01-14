@@ -1,4 +1,3 @@
-/* 1. VARIABLES & RESET */
 :root {
   --primary-red: #790d1d;
   --secondary-red: #9d352e;
@@ -22,7 +21,7 @@ body {
   line-height: 1.6;
 }
 
-/* 2. SHARED LAYOUT COMPONENTS (Navbar, Footer, Banner) */
+/* navbar, Footer, and Banner */
 .container {
   width: 90%;
   margin: auto;
@@ -51,7 +50,7 @@ body {
 .logo { margin-right: 20px; }
 .logo img { height: 50px; width: auto; display: block; }
 
-/* Search Bar */
+/* search elements */
 .search-bar { display: flex; align-items: center; }
 .search-bar input[type="text"] { padding: 5px; border: none; font-size: 16px; }
 .search-bar input[type="text"]:focus { outline: none; box-shadow: inset 0 0 0 2px var(--accent-red); }
@@ -63,7 +62,7 @@ body {
 .icons { display: flex; align-items: center; }
 .icons img { width: 30px; height: 30px; display: block; }
 
-/* This hides the window and dims the background */
+/*----- */
 .modal { 
     display: none; 
     position: fixed; 
@@ -75,7 +74,7 @@ body {
     background-color: rgba(0,0,0,0.6); 
 }
 
-/* This is the white box */
+
 .modal-content { 
     background-color: white; 
     margin: 15% auto; 
@@ -86,7 +85,7 @@ body {
     position: relative;
 }
 
-/* This is the "Magic" class that makes it appear */
+
 .show-modal { 
     display: block !important; 
 }
@@ -110,7 +109,7 @@ body {
   color: white;
 }
 
-/* Footer & Newsletter */
+/* footer and newslettter components */
 .site-footer { background-color: var(--primary-red); color: white; padding: 20px 0; text-align: center; margin-top: 40px; }
 .footer-logo { width: 150px; height: auto; display: block; margin: 0 auto; }
 .footer-links { list-style: none; display: flex; justify-content: center; gap: 20px; padding-top: 10px; }
@@ -126,7 +125,7 @@ body {
 .footer-social { margin-top: 20px; display: flex; justify-content: center; gap: 20px; filter: invert(100%); }
 .footer-social a img { width: 30px; height: 30px; transition: transform 0.3s ease; }
 
-/* Promo Text Overlay */
+/* promo sticker ---- */
 .promo-text {
   background-color: white;
   padding: 20px;
@@ -148,7 +147,7 @@ body {
   color: #000;
 }
 
-/* Products Grid */
+/* PRODUCTS HERE  */
 .products-grid {
   justify-content: center;
   display: grid;
@@ -176,7 +175,7 @@ body {
   color: var(--text-dark);
 }
 
-/* Testimonials / Reviews */
+/* Testimonials and reviews */
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -212,7 +211,7 @@ body {
   margin: 0;
 }
 
-/* 3. GALLERY & PRODUCT CARDS (Index & Gallery Pages) */
+/* GALLERY */
 .gallery { display: flex; flex-wrap: wrap; justify-content: center; }
 .gallery-item { margin: 20px; border: 2px solid; width: 380px; position: relative; }
 .gallery-item img {vertical-align: middle; width: 100%; height: 400px; object-fit: cover; }
@@ -225,7 +224,7 @@ body {
 
 .sale-badge { position: absolute; top: 15px; left: 15px; background-color: var(--primary-red); color: white; padding: 8px 14px; font-weight: bold; z-index: 2; border-radius: 4px; }
 
-/* 4. SHOP & SIDEBAR (Gallery Page) */
+/* SHOP LAYOUT and FILTER BAR */
 .shop-layout {
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -255,7 +254,6 @@ body {
 }
 .filter-group input { margin-right: 12px; width: 18px; height: 18px; cursor: pointer; }
 
-/* Sidebar Cart Buttons */
 .cart-controls {
   margin-top: 40px; /* Space away from the filters */
   border-top: 1px solid #eee;
@@ -270,8 +268,8 @@ body {
   padding: 10px 15px;
   cursor: pointer;
   font-weight: bold;
-  width: 100%;       /* Makes them fill the sidebar width */
-  margin-bottom: 10px; /* Space between the two buttons */
+  width: 100%;
+  margin-bottom: 10px;
   transition: background 0.3s ease;
 }
 
@@ -280,7 +278,6 @@ body {
   background: var(--secondary-red);
 }
 
-/* 4. PRODUCT GRID & CARDS (HUGGING BORDERS) */
 .products {
   display: flex;
   justify-content: center;
@@ -295,15 +292,15 @@ body {
 .achievements {
   display: flex;
   justify-content: center;
-  gap: 1.25rem;        /* tighter gaps for this page */
+  gap: 1.25rem;
   flex-wrap: wrap;
 
-  max-width: 2000px;   /* tighter container for this page */
+  max-width: 2000px;
   margin: 0 auto;
 }
 
 .achievements .card {
-  width: 380px;        /* slightly bigger than shop cards */
+  width: 380px;
 }
 
 
@@ -311,7 +308,7 @@ body {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  display: block; /* FIX: Removes the gap under the image */
+  display: block;
 }
 
 .card-content {
@@ -342,28 +339,26 @@ body {
 }
 .add-to-cart:hover { background: var(--secondary-red); }
 
-/* (Navbar and Footer styles would go here as they were) */
-/* 5. ABOUT & CONTACT (About Page) */
+/* About Page) */
 
-/* Opening Hours Section - Red Strip */
 .hours {
   background-color: #9d352e;
-  color: white;             /* Makes the text readable on red */
+  color: white;
   text-align: center;
-  padding: 40px 20px;       /* Adds space inside the strip */
-  margin: 40px 0;           /* Adds space outside the strip */
-  width: 100%;              /* Ensures it spans across */
+  padding: 40px 20px;
+  margin: 40px 0;
+  width: 100%;
 }
 
 .hours h2 {
   margin-top: 0;
-  color: white;             /* Overrides any global dark heading colors */
+  color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .hours ul {
-  list-style: none;         /* Removes the bullet points */
+  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -376,11 +371,6 @@ body {
 .about-section { display: flex; align-items: center; gap: 40px; padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
 .about-image, .about-text { flex: 1; }
 .about-image img { width: 100%; height: auto; }
-
-
-/* Contact Form "Send" Button - Small Red Rectangle */
-
-/* Ensure the form container allows the button to stay small */
 
 .contact-section { background-color: var(--secondary-red); padding: 60px 70px; color: white; text-align: center; }
 .contact-form .form-group { margin-bottom: 20px; text-align: left; }
@@ -397,36 +387,32 @@ body {
   cursor: pointer;
 }
 
-/* 6. EVENTS & CALENDAR (Custom/Events Page) */
+/* events/custom page */
 
 .custom-page-grid {
   display: grid;
-  /* Specifically ask for 3 columns */
   grid-template-columns: repeat(3, 1fr); 
   gap: 30px;
   width: 90%;
   max-width: 1200px;
-  /* This centers the whole block on the page */
   margin: 0 auto; 
 }
 
 
-/* Ensure the cards don't have a fixed width that breaks the row */
 .custom-page-grid .card {
   width: 100%;
 }
 
 
-
 .events-list {
     display: flex;
-    flex-direction: column;  /* stack cards vertically */
-    gap: 20px;               /* space between cards */
+    flex-direction: column;
+    gap: 20px;
 }
 
 .event-card {
     display: flex;
-    gap: 20px;              /* space between image and text */
+    gap: 20px;
     background-color: #ffffff;
     padding: 20px;
     margin: 20px;
@@ -435,13 +421,13 @@ body {
 }
 
 .event-image img {
-    width: 200px;           /* fixed width for image */
-    height: 150px;          /* fixed height */
-    object-fit: cover;      /* keeps proportions, crops if necessary */
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
 }
 
 .event-details {
-    flex: 1;                /* text takes remaining space */
+    flex: 1;
 }
 
 
@@ -454,7 +440,6 @@ body {
   display: inline-block;
 }
 
-/* Header + buttons */
 .calendar-header {
   display: flex;
   justify-content: center;
@@ -475,8 +460,6 @@ button {
 button:hover {
   background: #790d1d;
 }
-
-/* Grid */
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -505,7 +488,7 @@ button:hover {
   cursor: pointer;
 }
 
-/* Tooltip */
+/* event tooltip */
 .day.event:hover::after {
   content: attr(data-event);
   position: absolute;
@@ -536,7 +519,6 @@ button:hover {
   }
 }
 
-/* 7. RESPONSIVE QUERIES */ 
 @media (max-width: 768px) {
   .about-section, .shop-layout, .event-card { flex-direction: column;
   display: block; } 
@@ -551,7 +533,7 @@ button:hover {
 
   .navbar ul {
     flex-direction: column;
-    align-items: center; /* ← centers all items horizontally */
+    align-items: center;
     text-align: center;
   }
   
@@ -578,11 +560,11 @@ button:hover {
   }
 
     .shop-layout {
-    display: block; /* stack sidebar & products vertically */
+    display: block;
   }
 
   .filter-sidebar {
-    position: relative; /* stop sticky */
+    position: relative;
     width: 100%;
     margin-bottom: 20px;
   }
