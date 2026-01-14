@@ -80,12 +80,12 @@ document.addEventListener('click', function(e) {
 });
 
 // CONTACT FORMS
-document.querySelectorAll('.newsletter-form').forEach(form => {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert("Thank you for subscribing.");
-        this.reset();
-    });
+document.addEventListener('submit', function (e) {
+  if (e.target.matches('.newsletter-form')) {
+    e.preventDefault();
+    alert("Thank you for subscribing.");
+    e.target.reset(); 
+  }
 });
 
 const contactForm = document.querySelector('.contact-form');
